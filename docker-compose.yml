@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    working_dir: /hoytrabajas_test 
+    build: .
+    volumes:
+      - "./:/hoytrabajas_test"
+    command: "bin/rails s puma -b '0.0.0.0' -p 3000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database_hoytrabajas_test
+    links:
+      - database_hoytrabajas_test:database_hoytrabajas_test
+  database_hoytrabajas_test:
+    image: postgres
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
