@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    working_dir: /hoytrabajas_test 
+    working_dir: /hoytrabajas_test
     build: .
     volumes:
       - "./:/hoytrabajas_test"
@@ -9,10 +9,13 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - database_hoytrabajas_test
+      - db
     links:
-      - database_hoytrabajas_test:database_hoytrabajas_test
-  database_hoytrabajas_test:
-    image: postgres
+      - db:db
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
-      - ./.data/postgres:/var/lib/postgresql/data
+      - "./.data/postgres:/var/lib/postgresql/data"
