@@ -14,4 +14,9 @@ class UsersController < ApplicationController
       "El usuario no se guardo"
     end
   end
+
+  def index
+    @list_user=User.all.map{|user| {name: user.name, surname: user.surname, phone: user.phone}}
+  end
+
 end

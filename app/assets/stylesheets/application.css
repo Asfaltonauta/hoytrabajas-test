@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "atomic_design/atoms/button"
+ /* "app/assets/stylesheets/atomic_design/_buttons.scss" */
+ @import "atomic_design/molecules/form"

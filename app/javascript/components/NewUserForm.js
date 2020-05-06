@@ -6,9 +6,6 @@ class NewUserForm extends Component {
     super(props);
   }
 
-  componentDidMount(){
-  }
-
   render () {
     return(
       <React.Fragment>
