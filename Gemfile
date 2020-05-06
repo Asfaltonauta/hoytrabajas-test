@@ -10,6 +10,7 @@ gem 'sass-rails', '>= 6'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'webpacker'
 gem 'react-rails'
+gem "haml-rails", "~> 2.0"
 
 group :development, :test do
 end
